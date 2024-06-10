@@ -1,0 +1,1489 @@
+p {
+    margin: 0;
+}
+
+.background-starburst-1 {
+    background-image: url('/static/starburst.png');
+    background-repeat: no-repeat;
+    background-position: 20% 30%; /* Example position, you can adjust it */
+    transform: rotate(20deg); /* Example rotation, you can adjust it */
+}
+
+.background-starburst-2 {
+    background-image: url('/static/starburst.png');
+    background-repeat: no-repeat;
+    background-position: 80% 70%; /* Example position, you can adjust it */
+    transform: rotate(-30deg); /* Example rotation, you can adjust it */
+}
+
+.background-starburst-1, .background-starburst-2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    z-index: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: #33014B 0% 0% no-repeat padding-box;
+    color: white;
+}
+
+.login-background {
+    background-image: url('/static/Curved Dotted Line.svg'), url('/static/Starburst-white.svg'), url('/static/Starburst-purple.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: 50% 40%, 85% 50%, 15% 60%; /* Adjust these positions as needed */
+    background-size: auto 35vh, 20vh 20vh, 10vh 10vh; /* Adjust these sizes as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+}
+
+.login-content {
+    position: relative; /* This gives the login content a stacking context */
+    z-index: 1; /* Higher than .login-background */
+    /* ... other styles for login content ... */
+}
+
+.transparent-bg {
+    background-color: transparent;
+}
+
+.overflow-auto {
+    background: #33014B 0% 0% no-repeat padding-box; 
+}
+
+.overflow-auto .logged-in {
+    background-color: #E9BBFF;
+}
+
+.max-height {
+    /* height: 90vh; */
+}
+
+.loading-screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: #33014B 0% 0% no-repeat padding-box; 
+}
+
+.navbar {
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.05);
+    padding: 1rem 4rem;
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    justify-content: space-between; /* This will place the title and the button at the extremes */
+    align-items: center;
+    margin-bottom: 2rem;
+    background-color: #33014B;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: relative; /* Needed for absolute positioning of the title */
+}
+
+.navbar-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex: 1; 
+    gap: 5px; 
+}
+
+.navbar-title {
+    font-weight: 500;
+    font-size: 2.2rem;
+    margin: 0; /* Remove default margin */
+    line-height: 1;
+    text-align: center;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    justify-content: end; /* Center the contents */
+    flex: 1;  
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    justify-content: start; /* Center the contents */
+    flex: 1;  
+    gap: 5px;
+}
+
+.navbar-left {
+    display: flex;
+    justify-content: flex-start; 
+    width: 100%; 
+}
+
+.icon-24 {
+    width: 24px;
+    height: 24px;
+}
+
+.login-container {
+    width: 35%;
+}
+
+.login-title {
+    font-weight: bold;
+    font-size: 54px;
+    color: #DAADE7;
+    margin-bottom: -10px;
+    text-align: center;
+}
+
+.login-subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 15px;
+    color: #DAADE7;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.subtitle-image {
+    height: auto; /* Adjust as necessary */
+    width: 1rem; /* Adjust as necessary */
+    margin-right: 0.5rem; /* Space between the image and the text */
+}
+
+.auth-container {
+    background-color: #E9BBFF;
+    border-radius: 40px;
+    padding: 20px; /* Add padding as needed */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adjust the space between elements */
+    align-items: center; /* Center-align the child elements */
+    width: 100%; /* Take the full width of the parent or as needed */
+}
+
+.form-control {
+    border-radius: 40px;
+    border: none; /* Remove border */
+    padding: 1rem; /* Add padding */
+    margin: 0.5rem 0;
+}
+
+.btn-primary {
+    border-radius: 40px;
+    padding: 1rem 2rem; /* Adjust padding as needed */
+    font-weight: bold; /* Make the text bold */
+    text-transform: uppercase; /* UPPERCASE text */
+    margin-top: 1rem; /* Space above the button */
+    background: #6A0DAD; /* Purple background */
+    border: none; /* Remove border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.btn-primary:hover {
+    background: #7B1FA2; /* Darker purple background on hover */
+}
+
+.main-btn {
+    border-radius: 40px;
+    padding: 0.75rem 2.5rem;
+    margin-top: 0.8rem;
+    font-weight: 300;
+    font-size: 20px;
+    background: #540479; /* Purple background */
+    border: none; /* Remove border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.main-btn:hover {
+    background: #7B1FA2; /* Darker purple background on hover */
+}
+
+.small-btn {
+    border-radius: 40px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 300; /* Make the text bold */
+    background: #540479; /* Purple background */
+    border: none; /* Remove border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.small-btn:hover {
+    background: #7B1FA2; /* Darker purple background on hover */
+}
+
+.btn-danger {
+    background: #FF5757; /* Red background */
+}
+
+.btn-danger:hover {
+    background: #FF6E6E; /* Darker red background on hover */
+}
+
+.btn-secondary {
+    background: #E2E2E2; /* Grey background */
+    color: black;
+}
+
+.btn-secondary:hover {
+    background: #D5D5D5; /* Darker grey background on hover */
+    color: black;
+}
+
+.main-modal {
+    border-radius: 40px;
+    border: none; /* Remove border */
+    padding: .5rem; /* Add padding */
+}
+
+.modal-header {
+    border-bottom: none; /* Remove border */
+}
+
+.modal-footer {
+    border-top: none; /* Remove border */
+}
+
+.navbar-btn {
+    border-radius: 40px;
+    padding: 0.5rem 2rem;
+    font-weight: 400; /* Make the text bold */
+    background: transparent; /* Purple background */
+    border-color: white;
+    border: solid 1px;
+    border-width: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    color: white;
+    font-size: 18px;
+    display: flex;          /* Establishes this element as a flex container */
+    align-items: center;    /* Vertically centers the flex items */
+    justify-content: center;
+    gap: 8px;
+}
+
+.navbar-btn:hover {
+    background: #7B1FA2; /* Darker purple background on hover */
+}
+
+.toggle-buttons {
+    display: flex;
+    gap: 10px; /* Space between toggle buttons */
+    margin-bottom: 1rem;
+    border-radius: 40px;
+    background-color: #DA8BFF;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.toggle-buttons button {
+    background-color: #DA8BFF;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 400;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.toggle-buttons button.active {
+    background-color: #CC63FF;
+    color: white;
+}
+
+.logged-in {
+    background-color: #E9BBFF !important;
+    height: 100vh;
+}
+
+.main-menu {
+    background-color: #E9BBFF;
+    width: 100%; /* This ensures it takes the full width; adjust as necessary */
+    display: flex;
+    justify-content: center; /* This will vertically center the content */
+    align-items: start; /* This will horizontally center the content */
+    gap: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.menu-col-1 {
+    width: 35%;
+    padding: 10px;
+    display: flex;
+    align-items: flex-start; /* Align items to the start, not center */
+    flex-direction: column;
+    gap: 2rem;
+    overflow-y: auto;
+    scrollbar-width: thin; /* "auto" or "thin" */
+    scrollbar-color: #DFDFDF transparent; 
+}
+
+.menu-col-1::-webkit-scrollbar {
+    width: 8px;
+}
+
+.menu-col-1::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+.menu-col-1::-webkit-scrollbar-thumb {
+    background-color: #DFDFDF; 
+    border-radius: 10px;
+    border: 3px solid transparent; 
+}
+
+.menu-col-1::-webkit-scrollbar-thumb:hover {
+    background: #C0C0C0; 
+}
+
+.quiz-container-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.quiz-container-list::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+.quiz-container-list::-webkit-scrollbar-thumb {
+    background-color: #DFDFDF; 
+    border-radius: 10px;
+    border: 3px solid transparent; 
+}
+
+.quiz-container-list::-webkit-scrollbar-thumb:hover {
+    background: #C0C0C0; 
+}
+
+.menu-col-2 {
+    width: 35%;
+    padding: 10px;
+    display: flex; /* Make it a flex container */
+    align-items: start; /* Center items vertically */
+    flex-direction: column; /* Stack items vertically */
+    gap: 1rem; /* Spacing between each item */
+}
+
+.menu-col-3 {
+    width: 30%;
+    padding: 10px;
+    height: 90vh;
+    display: flex; /* Make it a flex container */
+    align-items: start; /* Center items vertically */
+    flex-direction: column; /* Stack items vertically */
+    gap: 1rem; /* Spacing between each item */
+}
+
+.quiz-container-list {
+    display: flex !important;
+    width: 100%;
+    display: flex; /* Make it a flex container */
+    align-items: start; /* Center items vertically */
+    flex-direction: column; /* Stack items vertically */
+    gap: 1rem; /* Spacing between each item */
+}
+
+.container-scroll {
+    overflow-y: auto;
+    max-height: 75vh;
+    padding-right: 3px;
+    padding-bottom: .7rem;
+}
+
+.menu-container {
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    display: flex; /* Make it a flex container */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    flex-direction: column; /* Stack items vertically */
+    padding: 2rem 4rem;
+    gap: 15px; /* Spacing between each item */
+    width: 100%;
+}
+
+.less-padding {
+    padding: 1.5rem 3rem;
+}
+
+.lesser-padding {
+    padding: 1.5rem 2rem;
+}
+
+.invite-code {
+    cursor: pointer;
+}
+
+.align-items-start {
+    align-items: start;
+}
+
+.larger-font {
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: black;
+}
+
+.bold-font {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.grey-font {
+    color: #a7a6a6;
+}
+
+.darker-grey {
+    color: #4c4c4c;
+}
+
+.quiz-info {
+   display: flex; 
+   flex-wrap: wrap; 
+   align-items: start; 
+   flex-direction: column;
+   justify-content: center;
+   gap: 3px; 
+}
+
+.align-center {
+    align-items: center;
+}
+
+.quiz-info-headers {
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center; 
+    gap: 10px;
+}
+
+.quiz-info-headers span {
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: black;
+    line-height: 1;
+    margin: 0;
+}
+
+.quiz-info-headers span.red-font{
+    color: #FF5757;
+}
+
+.red-font {
+    color: #FF5757;
+}
+
+.create-quiz-container {
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    display: flex; /* Make it a flex container */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    flex-direction: column; /* Stack items vertically */
+    padding: 2rem;
+    margin: 0 12rem;
+    gap: 15px; /* Spacing between each item */
+    width: 100%;
+    position: relative;
+}
+
+.quiz-input {
+    width: 90%;
+    display: flex; /* Make it a flex container */
+    justify-content: start; /* Center items horizontally */
+    align-items: start; /* Center items vertically */
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px;
+}
+
+.container-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the start (left) */
+    width: 100%;
+    padding-bottom: 15px; /* Optional: space below the header */
+}
+
+.container-header img {
+    margin-left: auto; /* Center the image */
+    margin-right: auto;
+}
+
+.feedback {
+    color: black;
+    font-weight: 400;
+    font-size: 1.15rem;
+    text-align: start;
+}
+
+.feedback .bold {
+    font-weight: 600;
+}
+
+.basic-text {
+    color: black;
+    font-weight: 400;
+    font-size: 1.15rem;
+    text-align: center;
+}
+
+.col-titles {
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.back-button {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background-color: white;
+    border-radius: 50%; /* Makes it circular */
+    border: 3px solid #540479;
+    height: 40px; /* Specific height for a perfect circle */
+    width: 40px; /* Specific width for a perfect circle */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    padding: 0; /* Remove any default padding */
+}
+
+.back-button img {
+    height: 80%; /* Adjust the size of the image */
+    width: 80%; /* Adjust the size of the image */
+}
+
+.basic-input-center {
+    border-radius: 40px;
+    border: 3px solid #D5D5D5;
+    padding: 1rem;
+    font-size: 18px;
+    padding-right: 30px; /* Adjust as needed, make room for the icon */
+    width: 100%;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.input-icon {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+}
+
+.basic-input {
+    border-radius: 40px;
+    border: 3px solid #D5D5D5;
+    padding: 1rem;
+    font-size: 18px;
+    width: 50%;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.quiz-text-input {
+    border-radius: 40px;
+    border: 3px solid #D5D5D5;
+    padding: 1rem 1.5rem;
+    margin: 0.5rem 0;
+    font-size: 18px;
+    width: 50%; /* Adjust width as needed */
+    height: 300px; /* Set a fixed height or use min-height */
+    resize: vertical; /* Allow resizing vertically */
+    overflow: hidden; /* Add scroll bar when content overflows */
+    overflow-y: auto;
+    scrollbar-width:thin ;
+    scrollbar-color: #c0c0c0 transparent;
+    scroll-behavior: smooth;
+}
+
+.quiz-text-input::-webkit-scrollbar{
+    width: 8px;
+
+}
+
+.quiz-text-input::-webkit-scrollbar-track{
+    background-color: transparent;
+    border-radius: 20px;
+
+
+}
+
+
+
+.vertical {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.horizontal, .vertical {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+}
+
+.horizontal {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    justify-content: start;
+    align-items: start;
+}
+
+.date {
+    display: flex; /* Continue using flexbox */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    align-items: center; /* Keep items vertically aligned */
+    gap: 8px;
+}
+
+.date span {
+    font-weight: 300;
+    font-size: 18px;
+    color: black;
+    line-height: 1;
+    margin: 0;
+}
+
+.date span.blue {
+    color: #5869FF;
+}
+
+.input-title {
+    gap: 8px;
+}
+
+.input-title span {
+    color: black;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+
+/* Container for all alert */
+.alert-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    position: fixed; /* Stay in the same place even on page scroll */
+    top: 10px; /* Start from the top */
+    left: 50%; /* Center horizontally */
+    z-index: 1000; /* Ensure it's above other elements */
+    transform: translateX(-50%);
+}
+
+/* Individual message boxes */
+.error-popup-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-sizing: content-box;
+    border-radius: 20px;
+    padding: 10px 45px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 15%;
+    max-width: 80%; /* You can adjust or remove this */
+    white-space: nowrap; /* Keep text in a single line */
+    opacity: 0; /* Start with an invisible popup */
+    animation: slideDown 0.5s forwards; /* Animation to slide down */
+    margin-bottom: 10px; /* Space between messages */
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100px); /* Start above the current position */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End at the current position */
+        opacity: 1;
+    }
+}
+
+.error-icon {
+    margin-right: 10px;
+    width: 24px; /* Adjust if needed */
+    height: 24px; /* Adjust if needed */
+}
+
+.error-message {
+    color: #333;
+    font-size: 16px; /* Adjust if needed */
+    text-align: center;
+}
+
+.large-inputs {
+    display: flex; /* Enable Flexbox */
+    gap: 30px; /* Space between child elements */
+    justify-content: center; /* Center align the child elements */
+    align-items: stretch; /* Stretch items to fill the container */
+    width: 100%;
+}
+
+.large-button {
+    cursor: pointer;
+    padding: 1rem 2rem;
+}
+
+.quiz-text-input,
+.file-upload {
+    flex: 1; /* Each child takes equal width */
+    min-width: 0; /* Prevents flex items from growing beyond their content */
+}
+
+.file-upload {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;  
+}
+
+.file-upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Same as textarea */
+    border: 3px solid #D5D5D5; /* Grey border */
+    border-radius: 40px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+}
+
+.file-input {
+    opacity: 0; /* Hide the actual input element */
+    position: absolute;
+    width: 0.1px;
+    height: 0.1px;
+    z-index: -1;
+}
+
+.file-label {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 10px; /* Space between image and text */
+    cursor: pointer;
+    font-size: 20px;
+    color: #E2E2E2;
+    text-align: center;
+    width: 100%;
+}
+
+.info-text {
+    gap: 5px;
+}
+
+.info-text span {
+    font-weight: 300;
+    font-size: 12px;
+    color: #E2E2E2;
+}
+
+.date .file-name {
+    color: #E2E2E2;
+    white-space: nowrap; /* Prevent individual filenames from wrapping */
+}
+
+.quiz-container {
+    width: 100%;
+    position: relative;
+}
+
+.quiz-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: white;
+    border-radius: 40px;
+    width: 100%;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    gap: 2rem;
+    cursor: pointer;
+}
+
+.quiz-details > p, .quiz-question-count > p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.quiz-item-loading {
+    position: absolute;
+    border-radius: 40px;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(26, 27, 27, 0.8); /* light with 0.8 opacity */
+    /* opacity: 0.8; */
+}
+
+.quiz-details {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    max-width: 50%;
+}
+
+.quiz-question-count {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+}
+
+.question-count {
+    color: black;
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.circle {
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    background-color: #5869FF;
+}
+
+.black {
+    background-color: black;
+}
+
+.red {
+    background-color: #FF5757;
+}
+
+.quiz-name {
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: black;
+}
+
+.quiz-title {
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: black;
+    text-align: center;
+}
+
+.loading-container {
+    padding: 1rem 2rem;
+    background-color: white;
+    border-radius: 40px;
+    width: 100%;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+.spinner-purple {
+    color: rgb(223, 6, 223);
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+  
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    background: #d3d3d3;
+    outline: none;
+    border-radius: 10px;
+    overflow: visible;
+}
+
+  
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5px;
+    height: 25px; /* Adjust height as needed */
+    background: #5869FF;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: visible;
+}
+  
+.slider::-moz-range-thumb {
+    width: 5px;
+    height: 25px; /* Adjust height as needed */
+    background: #5869FF;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: visible;
+}
+  
+.slider-value {
+    margin-left: 8px;
+    color: black;
+}
+
+.radio-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.checkbox-input {
+    display: none;
+  }
+  
+  /* Create a custom appearance for the label that will act as the custom checkbox */
+.checkbox-label {
+    display: flex;
+    align-items: center; /* This will vertically center the checkbox with the text */
+    cursor: pointer;  
+}
+  
+.custom-checkbox {
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-right: 10px; /* Add some space between the checkbox and the label text */
+}
+  
+  /* Style for when the checkbox is checked */
+.checkbox-input:checked + .custom-checkbox {
+    background-color: #5869FF;
+    border-color: #5869FF;
+}
+
+.quiz-text {
+    font-size: 20px;
+    font-weight: 400;  
+    color: black;
+}
+
+.blue {
+    color: #5869FF;
+}
+
+.final-score {
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.quiz-question-container {
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    display: flex; 
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    flex-direction: column; 
+    padding: 1.3rem 1.7rem;
+    gap: 5px;
+    width: 100%;
+}
+
+.answer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.answer-bottom-margin {
+    margin-bottom: 10px;
+}
+
+.answer-option {
+    display: flex;
+    justify-content: space-between; /* Align items to the start */
+    align-items: center;
+    border: 2px solid #DFDFDF;
+    border-radius: 20px;
+    color: #939393;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 1rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+.answer-option .disabled {
+    cursor: default;
+}
+
+.answer-option img {
+    width: 24px;
+    height: 24px;
+}
+
+.answer-input {
+    border: 2px solid #DFDFDF;
+    border-radius: 20px;
+    padding: 1rem;
+    font-size: 18px;
+    width: 100%;
+}
+
+.answer-input-dropdown {
+    border: 2px solid #DFDFDF;
+    border-radius: 20px;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 2rem; 
+    font-size: 18px;
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('/static/down.png');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5rem; 
+}
+
+.selected-answer-option {
+    border: 2px solid #5869FF;
+    color: #5869FF;
+}
+
+.correct-answer {
+    border: 2px solid #28CE00;
+    color: #28CE00;
+    background-color: #ECFAEF;
+}
+
+.wrong-answer {
+    border: 2px solid #FF5757;
+    color: #FF5757;
+    background-color: #FCE8EE;
+}
+
+.option-input {
+    opacity: 0;
+    position: absolute;
+}
+
+.option-circle {
+    min-width: 20px; /* Fixed width */
+    height: 20px; /* Fixed height */
+    border-radius: 50%;
+    border: 2px solid #DFDFDF;
+    display: inline-block;
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.option-input:disabled {
+    cursor: default;
+}
+
+.option-input:checked + .option-circle {
+    background-color: #5869FF;
+    border-color: #5869FF;
+}
+
+
+.option-input:checked, .option-circle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #5869FF;
+    border-radius: 50%;
+    display: none;
+}
+
+.option-input:checked + .option-circle::after {
+    display: block;
+}
+
+.bottom-margin {
+    margin-bottom: 2rem;
+}
+
+
+.voice-button {
+    background-image: url(volume.png);
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    padding: 0;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition:transform 0.2s ease ;
+}
+.voice-button:hover{
+   transform: translate(2px,2px);
+
+    
+}
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+    20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+.voice-button:active{
+    animation: shake 1s ease-in-out infinite;
+ }
+
+@keyframes tilt {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-animation {
+    animation: tilt 2.5s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+}
+
+/* Mobile phone screens */
+@media screen and (max-width: 900px) {
+    .login-container {
+        width: 90%;
+    }
+
+    .navbar {
+        padding: .5rem .5rem;
+        margin-bottom: 1rem;
+        flex-wrap: nowrap;
+    }
+
+    .navbar-logo {
+        max-width: max-content;
+    }
+
+    .navbar-logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .navbar-btn {
+        padding: 0.3rem 1rem;
+        font-size: 16px;
+        gap: 5px;
+    }
+
+    .navbar-btn img{
+        width: 20px;
+        height: 20px;
+    }
+
+    .navbar-left {
+        display: contents;
+    }
+
+    .navbar-right {
+        max-width: max-content;
+    }
+
+    .navbar-title {
+        font-size: 1.8rem;
+    }
+
+    .main-menu {
+        padding: 0 1.5rem;
+        flex-direction: column; /* Stack items vertically */
+        gap: 0.5rem; /* Spacing between each item */
+    }
+
+    .menu-container {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .main-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .menu-col-1, .menu-col-2, .menu-col-3 {
+        width: 100%; /* Take the full width of the parent or as needed */
+        gap: 1rem; /* Spacing between each item */
+    }
+
+    .max-height {
+        height: auto;
+    }
+
+    .create-quiz-container {
+        margin: 0 0;
+    }
+
+    .basic-input, .quiz-input, .quiz-text-input {
+        width: 100%;
+    }
+
+    .quiz-text-input {
+        min-height: 13rem;
+    }
+
+    .large-inputs {
+        flex-direction: column;
+        gap: .2rem;
+    }
+
+    .file-label {
+        gap: 0;
+    }
+
+    .main-btn, .small-btn {
+        padding: 0.5rem 1rem;
+        font-size: 16px;
+    }
+
+    .home-btn-text, .logout-btn-text {
+        display: none;
+    }
+}
+ 
+
+/* Smaller screen (e.g., 14-inch laptop) adjustments */
+@media screen and (min-width: 900px) and (max-width: 1440px) {
+    .login-background {
+        background-position: 50% 85%, 85% 80%, 15% 90%; /* Adjust these positions as needed */
+        background-size: auto 45vh, 25vh 25vh, 15vh 15vh; /* Adjust these sizes as needed */
+    }
+
+    .navbar {
+        padding: 1rem 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .navbar-logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .navbar-btn {
+        padding: 0.3rem 1.7rem;
+        font-size: 16px;
+        gap: 5px;
+    }
+
+    .navbar-btn img{
+        width: 20px;
+        height: 20px;
+    }
+
+    .date img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .quiz-info-headers img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .main-menu {
+        gap: 1.5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .menu-container {
+        padding: 1.5rem 3rem;
+    }
+
+    .menu-col-1 {
+        gap: 1rem;
+    }
+
+    .basic-text {
+        font-size: 1rem;
+    }
+
+    .basic-input, .basic-input-center {
+        padding: 0.7rem; 
+        font-size: 16px; 
+    }
+
+    .quiz-name {
+        font-size: 1.15rem;
+    }
+    
+    .date span {
+        font-size: 15px;
+    }
+
+    .quiz-item {
+        padding: 0.8rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .back-button {
+        top: 1.25rem;
+        left: 1.25rem;
+        height: 35px; /* Specific height for a perfect circle */
+        width: 35px; 
+    }
+
+    .back-button img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .main-btn, .small-btn {
+        padding: 0.5rem 1.25rem;
+        font-size: 16px;
+    }
+
+    .main-img {
+        width: 85px;
+        height: 85px;
+    }
+
+    .small-img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .main-btn {
+        gap: 5px;
+        margin-top: 0.5rem;
+    }
+
+    .small-btn img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .navbar-title {
+        font-size: 1.8rem;
+    }
+
+    .menu-col-3 {
+        width: 35%;
+    }
+    
+    .large-button {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .create-quiz-container {
+        padding: 1.5rem;
+        margin: 0 7rem;
+        gap: 15px;
+    }
+
+    .quiz-input {
+        gap: 5px;
+    }
+
+    .large-inputs {
+        gap: 20px;
+    }
+
+    .quiz-text-input {
+        padding: 0.75rem 1rem;
+        margin: 0.25rem 0;
+        font-size: 16px;
+        width: 50%; 
+        height: 250px;
+    }
+
+    .file-upload {
+        gap: 5px;  
+    }
+    
+    .file-upload-container {
+        padding: 0.75rem;
+        margin: 0.25rem 0;
+    }
+    
+    .file-label {
+        gap: 5px; 
+        font-size: 18px;
+    }
+    
+    .info-text {
+        gap: 3px;
+    }
+    
+    .info-text span {
+        font-size: 10px;
+    }
+
+    .quiz-info-headers {
+        gap: 7.5px;
+    }
+    
+    .quiz-info-headers span {
+        font-size: 1.15rem;
+    }
+
+    .less-padding {
+        padding: 1.2rem 2.5rem;
+    }
+    
+    .lesser-padding {
+        padding: 1.2rem 1.7rem;
+    }
+
+    .larger-font {
+        font-size: 1.15rem;
+    }
+}

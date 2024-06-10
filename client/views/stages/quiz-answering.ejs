@@ -1,0 +1,74 @@
+<div class="main-menu" :class="{ 'max-height': loadingQuizSubmission }">
+  <div class="menu-col-1" v-if="!loadingQuizSubmission">
+    <div
+      class="quiz-question-container"
+      v-for="question in currentQuiz.questions"
+      :key="question.question_id"
+    >
+      <div class="d-flex justify-content-between align-items-center w-100">
+          <p class="quiz-text blue">
+            Question {{ question.question_id }}/{{ currentQuiz.total_questions }}
+          </p>
+          <button @click="speakQuestion(question)" class="voice-button"></button>
+      </div>
+      <p class="quiz-text">{{ question.question }}</p>
+      <div class="answer-container">
+        <!-- Multi choice -->
+        <div
+          v-if="question.type == 'multi-choice'"
+          class="answer-option"
+          v-for="(option, index) in question.options"
+          :key="index"
+          @click="optionSelected(option, question.question_id, $event)"
+          :class="{'selected-answer-option': currentQuiz.answers[question.question_id] === option}"
+        >
+          <span>
+            {{ option }}
+          </span>
+          <input
+            type="radio"
+            :value="option"
+            v-model="currentQuiz.answers[question.question_id]"
+            :name="'question-' + question.question_id"
+            :id="'option-' + question.question_id + '-' + index"
+            class="option-input"
+          />
+          <label
+            :for="'option-' + question.question_id + '-' + index"
+            class="option-circle"
+          ></label>
+        </div>
+
+        <!-- Fill gaps -->
+        <div v-if="question.type == 'fill-gaps'">
+          <select v-model="currentQuiz.answers[question.question_id]" class="answer-input-dropdown">
+              <option disabled value="">Select an answer</option>
+              <option v-for="(option, index) in question.options" :key="index" :value="option">
+                  {{ option }}
+              </option>
+          </select>
+        </div>
+
+         <!-- Short answer -->
+        <input
+            v-else-if="question.type == 'short-answer'"
+            type="text"
+            placeholder="Enter answer"
+            v-model="currentQuiz.answers[question.question_id]"
+            class="answer-input"
+        />
+      </div>
+    </div>
+
+    <button class="main-btn width-100" @click="submitAnswers()">Submit</button>
+  </div>
+
+  <div v-else class="menu-col-1">
+    <div class="menu-container">
+        <img src="/static/Results.png" alt="results" class="main-img loading-animation"/>
+        <p class="basic-text bold-font">
+            Getting results!
+        </p>
+    </div>
+  </div>
+</div>

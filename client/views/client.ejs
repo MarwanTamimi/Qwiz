@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('header'); -%>
+
+    <div id="app" :class="{'logged-in': user}">
+        <%- include('components/navbar'); -%>
+        <div v-if="loadingScreen" class="loading-screen">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p>Loading...</p>
+        </div>
+
+        <div v-else>
+            <!-- Alerts -->
+            <%- include('components/alert-popup'); -%>
+
+            <!-- Login page -->
+            <div class="login-background"></div> <!-- Background first in the HTML structure -->
+            <div v-if="!user" class="login-content"><%- include('stages/login'); -%></div>
+
+            <!-- Main page -->
+            <div v-else>
+                <div v-if="currentState == 'MENU'"><%- include('stages/menu'); -%></div>
+                <div v-if="currentState == 'CREATE-QUIZ-1' || currentState == 'CREATE-QUIZ-2'"><%- include('stages/create-quiz'); -%></div>
+                <div v-if="currentState == 'VIEW-QUIZ'"><%- include('stages/view-quiz'); -%></div>
+                <div v-if="currentState == 'START-QUIZ'"><%- include('stages/quiz-answering'); -%></div>
+                <div v-if="currentState == 'QUIZ-RESULTS'"><%- include('stages/quiz-results'); -%></div>
+            </div>
+        </div>
+    </div>
+    <%- include('footer'); -%>
+</html>
